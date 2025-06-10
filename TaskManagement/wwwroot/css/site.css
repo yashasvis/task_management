@@ -1,0 +1,62 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    font-family: sans-serif;
+    background-color: #F5F7F8;
+}
+
+.fs-14 {
+    font-size: 14px !important;
+}
+
+.fs-20 {
+    font-size: 20px !important;
+}
+
+.btn-pd {
+    padding: .145rem .75rem !important;
+}
+
+.nav-bottom {
+    border-bottom: 1px solid #EDEDED;
+}
+
+.milestone {
+    background: #789652;
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.compliance {
+    background: #257180;
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.task {
+    background: #FFA725;
+    color: #FFF;
+    border-radius: 5px;
+    font-size: 12px;
+    text-align: center;
+    font-weight:bold;
+}

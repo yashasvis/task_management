@@ -1,0 +1,85 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Task Management</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+
+    <!-- Local CSS -->
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/TaskManagement.styles.css" asp-append-version="true" />
+
+    <!-- DataTables -->
+    <link href="@Url.Content("~/datatables/datatables.net-bs4/css/dataTables.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+    <link href="@Url.Content("~/datatables/datatables.net-buttons-bs4/css/buttons.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+
+    <!-- Responsive datatable examples -->
+    <link href="@Url.Content("~/datatables/datatables.net-responsive-bs4/css/responsive.bootstrap4.min.css")" rel="stylesheet" type="text/css" />
+
+    <!-- Font awesome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Sweet Alerts-->
+    <link href="~/sweetalert2/sweetalert2.min.css" />
+
+    <!-- Select 2-->
+    <link href="~/select2/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light nav-bottom">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="@Url.Action("Index","Home")">Task Management</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-md-center" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link active" id="tasks" href="@Url.Action("Index","Home")">Task</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" id="users" href="@Url.Action("Index","User")">User</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <!-- JS -->
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+    <!-- Font awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/js/all.min.js" integrity="sha512-b+nQTCdtTBIRIbraqNEwsjB6UvL3UEMkXnhzd8awtCYh0Kcsjl9uEgwVFVbhoj3uu1DO1ZMacNvLoyJJiNfcvg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Bootstrap -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Local JS -->
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <!-- Required datatable js -->
+    <script src="~/datatables/datatables.net/js/jquery.dataTables.min.js"></script>
+    <script src="~/datatables/datatables.net-bs4/js/dataTables.bootstrap4.min.js"></script>
+
+    <!-- Datatable Responsive -->
+    <script src="~/datatables/datatables.net-responsive/js/dataTables.responsive.min.js"></script>
+    <script src="~/datatables/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js"></script>
+
+    <!-- Sweet Alerts-->
+    <script src="~/sweetalert2/sweetalert2.all.min.js"></script>
+
+    <!-- Select 2-->
+    <script src="~/select2/select2.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

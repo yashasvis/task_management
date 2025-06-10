@@ -1,0 +1,74 @@
+﻿@model TaskManagement.Models.TasksDTO
+@{
+    ViewData["Title"] = "Create";
+}
+
+<div class="row mt-3">
+    <div class="card">
+        <div class="card-body">
+            <div class="d-flex align-items-center justify-content-between">
+                <h5 class="float-start text-black">Add Task</h5>
+                <a class="btn btn-primary fs-14 d-flex align-items-center btn-pd" href="@Url.Action("Index","Home")">
+                    <i class="fa fa-arrow-left me-1"></i> Back To List
+                </a>
+            </div>
+
+            <div class="col-md-12 mt-3">
+                <form asp-action="Creates" asp-controller="Home" method="post">
+                    @Html.ValidationSummary("", new { @class = "text-danger" })
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.Title"></label> <span class="text-danger">*</span>
+                            <input type="text" class="form-control" asp-for="@Model.Title" placeholder="Task Title">
+                        </div>
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.Description"></label> <span class="text-danger">*</span>
+                            <textarea type="text" class="form-control" asp-for="@Model.Description" placeholder="Task Description"></textarea>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.DueDate"></label> 
+                            <input type="date" class="form-control" asp-for="@Model.DueDate" placeholder="Task Due Date">
+                        </div>
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.Assignee"></label> <span class="text-danger">*</span>
+                            @Html.DropDownListFor(w => w.Assignee, Model.AssigneeList, new { @class = "form-select mb-2", @id = "Assignee" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.Reviewer"></label>
+                            @Html.DropDownListFor(w => w.Reviewer, Model.ReviewerList, new { @class = "form-select mb-2", @id = "Reviewer" })
+                        </div>
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.Status"></label>
+                            @Html.DropDownListFor(w => w.Status, Model.statusList, new { @class = "form-select mb-2", @id = "Status" })
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6 mt-3">
+                            <label asp-for="@Model.Type"></label>
+                            @Html.DropDownListFor(w => w.Type, Model.typeList, new { @class = "form-select mb-2", @id = "Type" })
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-4"><i class="fas fa-save"></i> Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+
+<!-- Select 2-->
+<link href="~/select2/select2.min.css" rel="stylesheet" />
+<script src="~/select2/select2.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $("#Assignee").select2();
+        $("#Reviewer").select2();
+    });
+</script>

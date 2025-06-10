@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="13.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.36" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TaskManagement.DAL\TaskManagement.DAL.csproj" />
+    <ProjectReference Include="..\TaskManagement.Factory\TaskManagement.Factory.csproj" />
+    <ProjectReference Include="..\TaskManagement.IRepository\TaskManagement.IRepository.csproj" />
+    <ProjectReference Include="..\TaskManagement.Repository\TaskManagement.Repository.csproj" />
+    <ProjectReference Include="..\TaskManagement.Service\TaskManagement.Service.csproj" />
+  </ItemGroup>
+
+</Project>
